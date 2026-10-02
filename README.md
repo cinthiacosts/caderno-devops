@@ -1,4 +1,2 @@
-# Caderno DevOps
-
-Caderno digital de estudos (HTML, CSS e JavaScript) servido por Nginx em Docker
-e entregue por um pipeline Jenkins: Checkout, Build e Deploy.
+Caderno DevOps 
+Laboratório Prático de CI/CDCaderno digital interativo desenvolvido com tecnologias web fundamentais (HTML5, CSS3 e JavaScript), containerizado com Nginx (Alpine) e integrado a um ciclo de entrega contínua (Continuous Delivery).   O pipeline foi estruturado via Jenkinsfile declarativo, orquestrado por um servidor Jenkins com acesso ao Docker Socket do host, garantindo automação completa em três etapas essenciais: Checkout (leitura do GitHub), Build (geração da imagem) e Deploy (atualização da aplicação em produção local sem intervenção manual). 
