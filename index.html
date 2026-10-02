@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caderno DevOps | Cínthia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main class="stage" id="stage" aria-label="Caderno DevOps">
+    <div class="book" id="book"></div>
+  </main>
+
+  <nav class="controls" aria-label="Navegação do caderno">
+    <button class="btn" id="prev" type="button" aria-label="Página anterior">&#8592;</button>
+    <button class="btn btn-toc" id="toc" type="button">Sumário</button>
+    <span class="indicator" id="indicator" aria-live="polite">Capa</span>
+    <button class="btn" id="next" type="button" aria-label="Próxima página">&#8594;</button>
+  </nav>
+
+  <noscript>
+    <p style="text-align:center;padding:2rem">Ative o JavaScript para virar as páginas do caderno.</p>
+  </noscript>
+
+  <!-- Conteúdo das páginas: o script.js monta o caderno a partir daqui -->
+  <div id="source" hidden>
+
+    <!-- 0 · Capa -->
+    <article class="page cover">
+      <div class="cover-inner">
+        <div class="cover-icon" aria-hidden="true">&gt;_</div>
+        <p class="cover-kicker">ADS · 4º período · 2026/2</p>
+        <h1>Caderno DevOps</h1>
+        <p class="cover-sub">Minhas anotações, códigos e desafios de estudo.</p>
+        <p class="cover-tag">Por Cínthia · Versão 1.0</p>
+      </div>
+      <p class="cover-hint">Clique na borda da página ou use as setas para virar</p>
+    </article>
+
+    <!-- 1 · Introdução -->
+    <article class="page">
+      <h2>Da teoria ao terminal</h2>
+      <p>
+        Este caderno reúne meus estudos de DevOps e Segurança da Informação.
+        A proposta é entender os conceitos, praticar os comandos e explicar
+        cada etapa.
+      </p>
+      <p>
+        Cada assunto tem a teoria resumida, os comandos que usei no
+        laboratório e um desafio para revisar.
+      </p>
+      <p class="hand">
+        Se você está lendo esta página no navegador, ela foi entregue por um
+        container Nginx.
+      </p>
+    </article>
+
+    <!-- 2 · Sumário -->
+    <article class="page">
+      <h2>Sumário</h2>
+      <ol class="toc-list">
+        <li><button type="button" data-goto="1"><span>Da teoria ao terminal</span><i></i><b>1</b></button></li>
+        <li><button type="button" data-goto="3"><span>Roteiro de estudos</span><i></i><b>3</b></button></li>
+        <li><button type="button" data-goto="4"><span>Git: o histórico do projeto</span><i></i><b>4</b></button></li>
+        <li><button type="button" data-goto="6"><span>Desafio de revisão</span><i></i><b>6</b></button></li>
+        <li><button type="button" data-goto="7"><span>Meu laboratório</span><i></i><b>7</b></button></li>
+        <li><button type="button" data-goto="8"><span>O pipeline em três etapas</span><i></i><b>8</b></button></li>
+        <li><button type="button" data-goto="9"><span>Docker e Nginx</span><i></i><b>9</b></button></li>
+        <li><button type="button" data-goto="10"><span>Anotações</span><i></i><b>10</b></button></li>
+      </ol>
+    </article>
+
+    <!-- 3 · Roteiro -->
+    <article class="page">
+      <h2>Roteiro de estudos</h2>
+      <ul>
+        <li>Computação em nuvem e fundamentos de segurança</li>
+        <li>Cultura DevOps, Git e CI/CD</li>
+        <li>Docker, containers e segurança</li>
+        <li>Docker Compose, Kubernetes e Terraform</li>
+        <li>Monitoramento e observabilidade</li>
+        <li>Ética e segurança da informação</li>
+      </ul>
+    </article>
+
+    <!-- 4 · Git -->
+    <article class="page">
+      <h2>Git: o histórico do projeto</h2>
+      <p>
+        O Git registra versões dos arquivos. Assim, podemos acompanhar o que
+        mudou e consultar versões anteriores do projeto.
+      </p>
+      <p>
+        O GitHub hospeda o repositório remoto e facilita o compartilhamento.
+        É de lá que o Jenkins vai buscar o código.
+      </p>
+      <aside class="sticky">
+        <strong>Para lembrar</strong>
+        init inicia, add prepara, commit registra e push envia.
+      </aside>
+    </article>
+
+    <!-- 5 · Comandos Git -->
+    <article class="page">
+      <h3>Comandos do meu laboratório</h3>
+      <pre><code>git init</code></pre>
+      <p>Inicia o repositório na pasta atual.</p>
+      <pre><code>git status</code></pre>
+      <p>Mostra o que mudou e o que está pronto para o commit.</p>
+      <pre><code>git add .
+git commit -m "mensagem"</code></pre>
+      <p>Prepara os arquivos e registra uma versão.</p>
+    </article>
+
+    <!-- 6 · Desafio -->
+    <article class="page">
+      <h3>Desafio de revisão</h3>
+      <p>
+        Criei o index.html e o style.css, mas ainda não fiz nenhum commit.
+        Executar git init já registra uma versão desses arquivos?
+      </p>
+      <details>
+        <summary>Conferir a explicação</summary>
+        <p>
+          Não. O git init apenas inicia o repositório. Precisamos selecionar
+          os arquivos com git add e depois registrar uma versão com git commit.
+        </p>
+        <p>
+          O envio ao repositório remoto é feito com git push.
+        </p>
+      </details>
+    </article>
+
+    <!-- 7 · Laboratório -->
+    <article class="page">
+      <h2>Meu laboratório</h2>
+      <p>
+        O desafio é publicar este caderno usando Git, Docker, Nginx e Jenkins,
+        de modo que uma alteração no código chegue ao ar com um clique.
+      </p>
+      <ol class="steps">
+        <li><strong>Aplicação:</strong> página HTML estática no GitHub, rodando em Nginx.</li>
+        <li><strong>Servidor de CI:</strong> Jenkins em um container Docker.</li>
+        <li><strong>Jenkinsfile:</strong> as instruções do pipeline, guardadas no repositório.</li>
+        <li><strong>Integração:</strong> job Pipeline lendo o Jenkinsfile do GitHub.</li>
+        <li><strong>Teste:</strong> alterar o HTML, enviar com git push e rodar o job de novo.</li>
+      </ol>
+    </article>
+
+    <!-- 8 · Pipeline -->
+    <article class="page">
+      <h2>O pipeline em três etapas</h2>
+      <div class="flow">
+        <div class="flow-step"><span>Checkout</span><small>busca o código no GitHub</small></div>
+        <div class="flow-arrow" aria-hidden="true"></div>
+        <div class="flow-step"><span>Build</span><small>constrói a imagem Docker</small></div>
+        <div class="flow-arrow" aria-hidden="true"></div>
+        <div class="flow-step"><span>Deploy</span><small>troca o container antigo pelo novo</small></div>
+      </div>
+      <p>
+        O Jenkinsfile fica na raiz do repositório. Por isso o GitHub é a única
+        fonte da verdade do processo de automação.
+      </p>
+    </article>
+
+    <!-- 9 · Docker -->
+    <article class="page">
+      <h2>Docker e Nginx</h2>
+            <pre><code>FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/index.html
+COPY style.css /usr/share/nginx/html/style.css
+COPY script.js /usr/share/nginx/html/script.js</code></pre>
+      <pre><code>docker build -t caderno-devops:1.0 .</code></pre>
+      <p>Constrói a imagem da pasta atual.</p>
+      <pre><code>docker run -d --name caderno-devops -p 127.0.0.1:8081:80 caderno-devops:1.0</code></pre>
+      <p>Sobe o container na porta 8081.</p>
+    </article>
+
+    <!-- 10 · Anotações -->
+    <article class="page notes">
+      <h2>Anotações</h2>
+      <p class="hand">Escreva aqui. O texto fica salvo neste navegador.</p>
+      <textarea class="notes-area" aria-label="Minhas anotações" spellcheck="true"></textarea>
+    </article>
+
+    <!-- 11 · Contracapa -->
+    <article class="page cover back-cover">
+      <div class="cover-inner">
+        <div class="cover-icon" aria-hidden="true">&gt;_</div>
+        <p class="cover-sub">Git + Docker + Jenkins</p>
+        <p class="cover-tag">Projeto acadêmico · DevOps e Segurança da Informação</p>
+      </div>
+    </article>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
